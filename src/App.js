@@ -8,19 +8,11 @@ function App() {
   const o = {o:'o'};
   const n = 5;
   
-  let [v, setV] = useState([{o:1}]);
-  const f=()=>{setV('false')}
+  let [v, setV] = useState([{o:1},{o:22},{o:333},{o:4444}]);
 
   return (
     <div className="App App-header">
-      <p style={{color:"red"}} >{s}</p>
-      <p>{a}</p>
-      <p>{n}</p>
-      <p>{b}</p>
-      <p>{o.o}</p>
-      <p>{11}</p>
-      <p>{v}</p>
-      <p><button onClick={f}>click</button></p>
+      {v.map((b)=>(<h1 key={b.o}>{b.o}</h1>))}
     </div>
   );
 }
