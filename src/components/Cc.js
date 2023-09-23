@@ -1,8 +1,9 @@
-function Cc(params) {
+function Cc({array, object, boolean, handleDelete}) {
 
     return (
         <div>
-            {params.att.map((b)=>(<h1 key={b.o}>{b.o}</h1>))}
+            {array.map((a)=> {return ( <h1 key={a.o}> {a.o} - {object.o} - {boolean} <button onClick={()=>handleDelete(a.o)}>Delete</button> </h1>)})}
+
         </div>
     )
 }
