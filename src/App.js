@@ -4,6 +4,7 @@ import Cc from "./components/Cc";
 function App() {
 
   const [a, seta] = useState([{o:1},{o:22},{o:333},{o:4444}]);
+  const [e, sete] = useState(4);
   const b = true;
   const o = {o:12};
 
