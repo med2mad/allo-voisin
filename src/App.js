@@ -12,12 +12,16 @@ function App() {
     const newblogs = a.filter( item => item.o !== p);
     seta(newblogs);
   }
-
-  useEffect(()=>{console.log('side effect');});
+  function handleEdit(){
+    sete(e+1);
+  }
+  useEffect(()=>{console.log('side effect');} , [e]);
 
   return (
     <div className="App App-header">
       <Cc array={a} object={o} boolean={b} handleDelete={handleDelete} ></Cc>
+      <button onClick={handleEdit}>Edit</button>
+      <p>{e}</p>
     </div>
   );
 }
