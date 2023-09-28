@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App App-header">
-      <Cc array={a} object={o} boolean={b} handleDelete={handleDelete} ></Cc>
+      {a && <Cc array={a} object={o} boolean={b} handleDelete={handleDelete} ></Cc>}
       <button onClick={handleEdit}>Edit</button>
       <p>{e}</p>
     </div>
