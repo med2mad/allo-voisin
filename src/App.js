@@ -7,6 +7,7 @@ function App() {
   const [e, sete] = useState(4);
   const b = true;
   const o = {o:12};
+  const [isPending, setIsPneding]= useState(true)
 
   function handleDelete(p){
     const newblogs = a.filter( item => item.o !== p);
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="App App-header">
+      {setIsPneding(false) && <p>Loading ...</p>}
       {a && <Cc array={a} object={o} boolean={b} handleDelete={handleDelete} ></Cc>}
       <button onClick={handleEdit}>Edit</button>
       <p>{e}</p>
