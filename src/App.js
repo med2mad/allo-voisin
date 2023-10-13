@@ -1,29 +1,20 @@
-import { useState, useEffect} from "react";
-import Cc from "./components/Cc";
+import { useState } from "react";
+import Cf from "./Cf";
 
 function App() {
 
-  const [a, seta] = useState([{o:1},{o:22},{o:333},{o:4444}]);
-  const [e, sete] = useState(4);
+  const s = 'dsadsad';
   const b = true;
-  const o = {o:12};
-  const [isPending, setIsPneding]= useState(true)
-
-  function handleDelete(p){
-    const newblogs = a.filter( item => item.o !== p);
-    seta(newblogs);
-  }
-  function handleEdit(){
-    sete(e+1);
-  }
-  useEffect(()=>{console.log('side effect');} , [e]);
+  const a = [1, 2, 3];
+  const o = {o:'o'};
+  const n = 5;
+  
+  let [v, setV] = useState([{o:1},{o:22},{o:333},{o:4444}]);
 
   return (
     <div className="App App-header">
-      {setIsPneding(false) && <p>Loading ...</p>}
-      {a && <Cc array={a} object={o} boolean={b} handleDelete={handleDelete} ></Cc>}
-      <button onClick={handleEdit}>Edit</button>
-      <p>{e}</p>
+      <Cf></Cf>
+      {v.map((b)=>(<h1 key={b.o}>{b.o}</h1>))}
     </div>
   );
 }
