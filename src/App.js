@@ -1,22 +1,39 @@
-import { useState } from "react";
-import Cf from "./Cf";
+import { useState, useEffect } from "react";
+import Cf from "./components/Cf";
+import C2 from "./components/C2";
+import useH from "./useH";
+import {BrowserRouter , Route, Switch, Link} from "react-router-dom";
 
 function App() {
 
-  const s = 'dsadsad';
-  const b = true;
-  const a = [1, 2, 3];
-  const o = {o:'o'};
-  const n = 5;
-  
-  let [v, setV] = useState([{o:1},{o:22},{o:333},{o:4444}]);
+  const customH = useH();
 
-  return (
-    <div className="App App-header">
-      <Cf></Cf>
-      {v.map((b)=>(<h1 key={b.o}>{b.o}</h1>))}
-    </div>
-  );
+  let [v, setV] = useState([{o:1},{o:22},{o:333},{o:4444}]);
+  useEffect(()=>{console.log("side Effect");} , [])
+
+  return ( <div className="App App-header">
+
+    <BrowserRouter>
+    
+      <Link to="/">Home</Link>
+      <Link to="cf">Cf</Link>
+      <Link to="c2">C2</Link>
+
+      <Switch>
+        <Route exact path="/">
+          <h1>Home</h1>
+        </Route>
+        <Route path="/c2">
+          <C2></C2>
+        </Route>
+        <Route path="/cf">
+          <Cf att={customH}></Cf>
+        </Route>
+      </Switch>
+      
+    </BrowserRouter>
+
+  </div>);
 }
 
 export default App;
