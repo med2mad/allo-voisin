@@ -3,9 +3,6 @@ import Cf from "./components/Cf";
 import C2 from "./components/C2";
 import useH from "./useH";
 import {BrowserRouter , Route, Switch, Link} from "react-router-dom";
-
-
-
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 
